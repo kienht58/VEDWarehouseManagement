@@ -21,18 +21,6 @@ class CreateTransactionsTable extends Migration
             $table->text('note');
             $table->timestamps();
         });
-
-        // Schema::table('transactions', function(Blueprint $table) {
-        //     $table->foreign('request_code')
-        //           ->references('code')
-        //           ->on('requests');
-        //     $table->foreign('transaction_type')
-        //           ->references('id')
-        //           ->on('dictionaries');
-        //     $table->foreign('warehouse_id')
-        //           ->references('warehouse_id')
-        //           ->on('warehouses');
-        // });
     }
 
     /**

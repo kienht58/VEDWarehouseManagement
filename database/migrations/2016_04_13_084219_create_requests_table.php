@@ -14,22 +14,13 @@ class CreateRequestsTable extends Migration
     {
         Schema::create('requests', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('warehouse_id')->unsigned();
             $table->integer('code')->unique()->unsigned();
             $table->integer('type');
             $table->integer('status');
             $table->text('note');
             $table->timestamps();
         });
-
-        // Schema::table('requests', function (Blueprint $table) {
-        //     $table->foreign('type')
-        //           ->references('id')
-        //           ->on('dictionaries');
-
-        //     $table->foreign('status')
-        //           ->references('id')
-        //           ->on('dictionaries');
-        // });
     }
 
     /**

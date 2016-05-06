@@ -18,17 +18,9 @@ class CreateProductsTable extends Migration
             $table->integer('supplier_id')->unsigned();
             $table->string('serial');
             $table->string('serial_from_supplier');
+            $table->string('request_code');
             $table->integer('status')->unsigned();
             $table->timestamps();
-        });
-
-        Schema::table('products', function (Blueprint $table) {
-            $table->foreign('category_id')
-                  ->references('id')
-                  ->on('categories');
-            // $table->foreign('supplier_id')
-            //       ->references('supplier_id')
-            //       ->on('suppliers');
         });
     }
 

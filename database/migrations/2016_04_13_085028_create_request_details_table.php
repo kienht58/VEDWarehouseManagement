@@ -17,23 +17,11 @@ class CreateRequestDetailsTable extends Migration
             $table->integer('request_code')->unsigned();
             $table->integer('supplier_id')->unsigned();
             $table->integer('quantity');
-            $table->string('serial_from_supplier')->unique();
-            $table->timestamp('manufacture_date');
-            $table->timestamp('expiry_date');
-            $table->double('price');
+            $table->timestamp('date');
+            $table->double('cost_per_unit');
             $table->text('note');
             $table->timestamps();
         });
-
-        // Schema::table('request_details', function(Blueprint $table) {
-        //     $table->foreign('request_code')
-        //           ->references('code')
-        //           ->on('requests');
-            
-        //     $table->foreign('supplier_id')
-        //           ->references('supplier_id')
-        //           ->on('suppliers');
-        // });
     }
 
     /**

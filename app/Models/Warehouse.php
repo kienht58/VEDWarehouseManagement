@@ -12,4 +12,8 @@ class Warehouse extends Model
     {
     	return $this->hasMany('App\Models\Category');
     }
+
+    public function requests() {
+    	return $this->hasMany('App\Models\WarehouseRequest');
+    }
 }

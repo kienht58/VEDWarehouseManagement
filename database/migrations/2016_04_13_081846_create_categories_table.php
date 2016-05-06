@@ -21,12 +21,6 @@ class CreateCategoriesTable extends Migration
             $table->integer('quantity');
             $table->timestamps();
         });
-
-        Schema::table('categories', function(Blueprint $table) {
-            $table->foreign('warehouse_id')
-                  ->references('id')
-                  ->on('warehouses');
-        });
     }
 
     /**
